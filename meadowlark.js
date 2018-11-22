@@ -1,3 +1,5 @@
+
+var fortune = require('./lib/fortune.js');
 var express = require('express');
 var app = express();
 
@@ -14,9 +16,9 @@ app.get('/', function(req, res){
     res.render('home');
 });
 app.get('/about', function(req, res){
-    var randomFortune =
-        fortunes[Math.floor(Math.random() * fortunes.length)];//随机取数组中的
-    res.render('about', { fortune: randomFortune });
+    // var randomFortune =
+    //     fortunes[Math.floor(Math.random() * fortunes.length)];//随机取数组中的
+    res.render('about', { fortune: fortune.getFortune() });
 });
 
 app.use(function (req, res) {
@@ -37,11 +39,11 @@ app.listen(app.get('port'), function(){
         app.get('port') + '; press Ctrl-C to terminate.' );
 });
 
+// var fortunes = [
+//     "Conquer your fears or they will conquer you.",
+//     "Rivers need springs.",
+//     "Do not fear what you don't know.",
+//     "You will have a pleasant surprise.",
+//     "Whenever possible, keep it simple.",
+// ];
 
-var fortunes = [
-    "Conquer your fears or they will conquer you.",
-    "Rivers need springs.",
-    "Do not fear what you don't know.",
-    "You will have a pleasant surprise.",
-    "Whenever possible, keep it simple.",
-];
