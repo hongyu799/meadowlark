@@ -1,3 +1,4 @@
+
 var fortune = require('./lib/fortune.js');
 var express = require('express');
 var app = express();
@@ -38,7 +39,6 @@ app.listen(app.get('port'), function(){
         app.get('port') + '; press Ctrl-C to terminate.' );
 });
 
-
 // var fortunes = [
 //     "Conquer your fears or they will conquer you.",
 //     "Rivers need springs.",
@@ -46,3 +46,4 @@ app.listen(app.get('port'), function(){
 //     "You will have a pleasant surprise.",
 //     "Whenever possible, keep it simple.",
 // ];
+
